@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>详解Android触摸事件处理程序 | thanatosx的博客 | 总觉得哪里不对但好像又没什么不对~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
+
+dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
+onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
+onTouchEvent(MotionEvent">
+<meta property="og:type" content="article">
+<meta property="og:title" content="详解Android触摸事件处理程序">
+<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/index.html">
+<meta property="og:site_name" content="thanatosx的博客">
+<meta property="og:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
+
+dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
+onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
+onTouchEvent(MotionEvent">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/66008afa-fdb6-46f8-a14f-28bc1f500c58">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/8897bafe-ae2d-4f1f-b0a4-752475bd486d">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/b5dd340d-da54-4d12-83b2-eb321cc7001d">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/71fd563b-2063-461a-bbf7-0a5a0f82406b">
+<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/da16d60f-f3ea-4d8b-b1ef-edfece91d26e">
+<meta property="og:updated_time" content="2017-01-12T07:30:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="详解Android触摸事件处理程序">
+<meta name="twitter:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
+
+dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
+onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
+onTouchEvent(MotionEvent">
+<meta name="twitter:image" content="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce">
+    
+        <link rel="alternative" href="/atom.xml" title="thanatosx的博客" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Thanatosx Dominic</h5>
+          <a href="mailto:handoop4claire@gmail.com" title="handoop4claire@gmail.com" class="mail">handoop4claire@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/thanatosx" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">详解Android触摸事件处理程序</div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">详解Android触摸事件处理程序</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-12T07:30:16.000Z" itemprop="datePublished" class="page-time">
+  2017-01-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#详解Android触摸事件处理程序"><span class="post-toc-number">1.</span> <span class="post-toc-text">详解Android触摸事件处理程序</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-详解Android触摸事件处理程序"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">详解Android触摸事件处理程序</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月12日 15:30" datetime="2017-01-12T07:30:16.000Z"  itemprop="datePublished">2017-01-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="详解Android触摸事件处理程序"><a href="#详解Android触摸事件处理程序" class="headerlink" title="详解Android触摸事件处理程序"></a>详解Android触摸事件处理程序</h3><p>在了解触摸时间处理程序之前，我们来了解这几个主角：</p>
+<ul>
+<li><code>dispatchTouchEvent(MotionEvent ev)</code>：此方法允许 ViewGroup 在分派之前截获所有触摸事件</li>
+<li><code>onInterceptTouchEvent(MotionEvent ev)</code>：此方法允许 ViewGroup 监视分派给子视图的事件</li>
+<li><code>onTouchEvent(MotionEvent ev)</code>： 在发生触摸屏运动事件时调用</li>
+</ul>
+<p>接下来展示一下工作界面，注意，<code>Layout03</code>是嵌套在<code>Layout02</code>里面的</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>首先，按下<code>Layout03</code>，事件流程如图所示：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/66008afa-fdb6-46f8-a14f-28bc1f500c58" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>按下的时候总共有触发两个事件：<code>ACTION_DOWN</code>和<code>ACTION_UP</code>，但是因为整个事件流程中并没有哪个组件消费了<code>ACTION_DOWN</code>事件，而<strong>只有在<code>onTouchEvent</code>中消费了<code>ACTION_DOWN</code>事件，后续事件<code>ACTION_UP</code>,<code>ACTION_MOVE</code>…才会触发</strong>，所以这里<code>ACTION_DOWN</code>事件一路挥歌直下，<code>ACTION_UP</code>则并没有发生。</p>
+<p>我们让<code>Layout02</code>的<code>onTouchEvent</code>返回<code>true</code>，消费<code>ACTION_DOWN</code>事件，事件流程如图所示：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/8897bafe-ae2d-4f1f-b0a4-752475bd486d" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>可以看到<code>Layout02</code>的<code>onTouchEvent</code>消费<code>ACTION_DOWN</code>事件之后便不在往下传了，后续事件也随后开始出现，并且<code>Layout02</code>直接将后续事件派发给消费者。所以<strong>当一个组件消费了<code>ACTION_DOWN</code>事件时，后续事件从窗口传到该组件的<code>dispatchTouchEvent</code>之后便直接交给它的<code>onTouchEvent</code>方法处理</strong></p>
+<p>我们在<code>Layout02</code>的<code>onInterceptTouchEvent</code>里返回<code>true</code>，事件流程如下：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>这时候事件传递就会发生<strong>截断</strong>的情况，<code>ACTION_DOWN</code>经过<code>Layout02</code>的<code>onInterceptTouchEvent</code>时被强制直接交给自己的<code>onTouchEvent</code>继续传递。此时如果<code>Layout01</code>的<code>onTouchEvent</code>消费此事件：<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/b5dd340d-da54-4d12-83b2-eb321cc7001d" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<p>则后续事件就直接传递给<code>Layout01</code>的<code>onTouchEvent</code>处理了，如果让<code>Layout02</code>的<code>dispatchTouchEvent</code>直接返回<code>true</code>呢？<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>这种情况下<code>ACTION_DOWN</code>流经<code>Layout02</code>的<code>dispatchTouchEvent</code>时就很干脆的断了，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就直接派发给自己的<code>onTouchEvent</code>处理，相当于<code>Layout02</code>在说：我不往下派发了，直接交给我来处理吧！</p>
+<p>还有些比较极端的情况：如果让<code>Layout03</code>的<code>onTouchEvent</code>来消费<code>ACTION_DOWN</code>事件，后续事件在流经<code>Layout02</code>的<code>dispatchTouchEvent</code>的时候就返回了<code>true</code>呢？<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/71fd563b-2063-461a-bbf7-0a5a0f82406b" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>如图所示，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就消失了，不再往下传递，<code>Layout03</code>也就接收不到<code>ACTION_UP</code>,<code>ACTION_MOVE</code>之类的后续事件了。最后，如果不在<code>Layout02</code>的<code>dispatchTouchEvent</code>返回<code>true</code>，而是在它的<code>onInterceptTouchEvent</code>返回呢？<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://app.yinxiang.com/shard/s59/res/da16d60f-f3ea-4d8b-b1ef-edfece91d26e" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>这时候事件到达<code>Layout02</code>的<code>onInterceptTouchEvent</code>之后就变成了<code>ACTION_CENCEL</code>，直到传递给消费者。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-12T07:30:46.000Z" itemprop="dateUpdated">2017年1月12日 15:30</time>
+</span><br>
+
+
+        版权归作者所有，如需转载，请通过邮件联系我。
+    </div>
+    <footer>
+        <a href="http://thanatosx.net">
+            <img src="/img/avatar.jpg" alt="Thanatosx Dominic">
+            Thanatosx Dominic
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&via=http://thanatosx.net" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/12/cixu2srvw00000b8m66pvaoy1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android Looper、Message、Handler、MessageQueue源码解析</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        你的支持是对我的最大鼓励~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>thanatosx的博客 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&via=http://thanatosx.net" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aQW7DMAxE0dz/0u42QGr5DyUvRH2vgiK187wghhQ/H3xdP9f338n37/7r9/PdPRdcMmTI2JZxDS/C4A/mGP7bZMiQcQ6j9shx3ePUWkGXIUOGjPHtePhL7yBDhgwZaxk8OBIYL+4yZMg4kzFTQB/ayzACvt6Ly5AhY0PGe2Oy+c+vnG/IkCFjK8YVXmkR5KGQ3/+fJ8qQIaM1gxe4NPzxVYz0/rcvSIYMGU0ZaftKhvvjH5oO0VDJliFDxgEMPsTnJBL7eBB8CJQyZMg4jFFrI9fi49GbDBkyDmDMH1vyH5RGSRRGZciQ0ZrB28h0OYNERlJSi2sWMmTIaMdIxbWmdH4y9vAKZMiQcQCjFvh4iEzb6Xi0J0OGjNaMVWU3DYLpq0GFWIYMGQcw0pF9bbgW7KyFSBkyZHRl8JHZ/MPeWO+QIUPGCYzxTfmyVy1u1gJisHghQ4aMdgzeiPLR//xyRgCTIUNGU0a6HFYLf7X1i2CxQ4YMGQcw0ijGwfNHpEEvLkOGjNaM2iCMt6a8SV4waJMhQ0ZTRnpIMLMKVjvgfIiVMmTIaMq4wousZfC2k5RgtEYmQ4aM1ozaAWd6xFh7KekxgwwZMnoz0iK76jCSl29UcGXIkHEAgwz0+XhuprDW1tdkyJAh4w1SWoiRT4YMGTImWlwe9UirvKDgypAhY0NGbSWCl+MaNfimDBkyWjPS3JUO5kiBTov7gvgoQ4aMPRh/xMPwLicEKKkAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.5"></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+</body>
+</html>

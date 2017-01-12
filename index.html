@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>thanatosx的博客 | 总觉得哪里不对但好像又没什么不对~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="undefined">
+    <meta name="description" content="我该说点什么呢？">
+<meta property="og:type" content="website">
+<meta property="og:title" content="thanatosx的博客">
+<meta property="og:url" content="http://thanatosx.net/index.html">
+<meta property="og:site_name" content="thanatosx的博客">
+<meta property="og:description" content="我该说点什么呢？">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="thanatosx的博客">
+<meta name="twitter:description" content="我该说点什么呢？">
+    
+        <link rel="alternative" href="/atom.xml" title="thanatosx的博客" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.5">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Thanatosx Dominic</h5>
+          <a href="mailto:handoop4claire@gmail.com" title="handoop4claire@gmail.com" class="mail">handoop4claire@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/thanatosx" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">thanatosx的博客</div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">thanatosx的博客</h1>
+        <h5 class="subtitle">
+            
+                总觉得哪里不对但好像又没什么不对~
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-详解Android触摸事件处理程序"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月12日 15:30" datetime="2017-01-12T07:30:16.000Z"  itemprop="datePublished">2017-01-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/12/cixu2srwj00070b8m87jsxsep/">详解Android触摸事件处理程序</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
+
+dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
+onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
+onTouchEvent(MotionEvent ev)： 在发生触摸屏运动事件时调用
+
+接下来展示一下工作界面，注意，Layout03是嵌套在Layout02里面的
+
+                
+                    
+                    
+                
+                
+            
+首先，按下Layout03，事件流程如图所示：
+
+      ...
+    
+
+        <a href="/2017/01/12/cixu2srwj00070b8m87jsxsep/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android-Looper、Message、Handler、MessageQueue源码解析"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月12日 15:28" datetime="2017-01-12T07:28:07.000Z"  itemprop="datePublished">2017-01-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/12/cixu2srvw00000b8m66pvaoy1/">Android Looper、Message、Handler、MessageQueue源码解析</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        在Android开发过程中，Message和Handler是经常会使用到的类，我们对它们广泛的认知是为了在异步任务中更新主线程的UI，因为在主线程处理耗时的任务是会ANR的。Message和Handler普遍使用的场景是HTTP请求，HTTP请求可能会造成长时间的线程阻塞，一般来说都是新开一个线程处理请求任务，在数据最终返回的时候调用Handler的handlerMessage方法，交给主线程处理，但是它们内部是如何运作的呢？为了搞清楚这个问题，我们先从ActivityThread这个main方法开始，一步一步分析：
+123456789101112131415161718192021222324252627282930313233343536373839404142public static void main(String[] args) &#123;    Trace.trace...
+    
+
+        <a href="/2017/01/12/cixu2srvw00000b8m66pvaoy1/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Handler/">Handler</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Looper/">Looper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Message/">Message</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MessageQueue/">MessageQueue</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-聊聊Android-Theme的那些事"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月12日 15:26" datetime="2017-01-12T07:26:50.000Z"  itemprop="datePublished">2017-01-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/12/cixu2srwo00080b8mvbzxg8nn/">聊聊Android Theme的那些事</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        1. 概述&nbsp;&nbsp;&nbsp;&nbsp;话说Android里面的主题真是琳琅满目，虽然平时开发时我们都是固定，约定成熟的使用某个主题，例如官方推荐的AppComat系列，但是Android有多少主题，它们之间有什么联系和区别很少人去认真探究。我本人开发时都是直接使用Android Studio生成的主题，或者是继承至它。Holo主题基本没有使用过，似乎是一个比较老的主题，比我早接触Android的前辈们应该比较熟悉。Material主题就属于比较新的主题。还有呢？
+2. 一些主要的根主题以及它的继承结构&nbsp;&nbsp;&nbsp;&nbsp;这里我使用了“根主题”的说法，因为大多数主题都是继承至某个主题，追根究底，会找到几个没有parent的根主题。我们来看看这几个根主题：
+
+Theme：API 10及其以下的默认主题。
+
+Theme.Holo：API 11...
+    
+
+        <a href="/2017/01/12/cixu2srwo00080b8mvbzxg8nn/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theme/">Theme</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-FragmentPagerAdapter与FragmentStatePagerAdapter的差异"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月12日 15:23" datetime="2017-01-12T07:23:55.000Z"  itemprop="datePublished">2017-01-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/12/cixu2srwf00060b8muh93hlgq/">FragmentPagerAdapter与FragmentStatePagerAdapter的差异</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        1、概述PagerAdapter是提供计算ViewPager内的Pages的适配器，而FragmentPagerAdapter与FragmentStatePagerAdapter都是继承至PagerAdapter这个基类，是PagerAdapter的两个特殊实现。可能有些人会断章取义的认为FragmentPagerAdapter不会保存Fragment的状态，而FragmentStatePagerAdapter会维持Fragment的状态。事实上，这是一种错误的理解，虽然你在使用时并不会有什么影响。FragmentPagerAdapter与FragmentStatePagerAdapter的实现跟它们所要服务的场景有密切的关系，我们通过理解二者的源码来了解设计者的设计目的。
+2、FragmentPagerAdapter首先先贴上源代码，代码量不是很多12345678910111213...
+    
+
+        <a href="/2017/01/12/cixu2srwf00060b8muh93hlgq/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Adapter/">Adapter</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ViewPager/">ViewPager</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-基本排序(C语言版)"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017年01月12日 14:47" datetime="2017-01-12T06:47:03.000Z"  itemprop="datePublished">2017-01-12</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/算法/">算法</a></li></ul>
+
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/01/12/cixu2srw500020b8msgxe3y4m/">基本排序(C语言版)</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        冒泡排序12345678910111213141516/*** 冒泡排序 logN^2* 基本思路：每次从数组底端将最小的数“冒”上来* **/void BubbleSort(int *p, int len)&#123;    for(int i=0; i&lt;len-1; i++)&#123;        for(int j=len-1; j&gt;i; j--)&#123;            if(*(p+j)&lt;*(p+j-1))&#123;                *(p+j) ^= *(p+j-1);                *(p+j-1) ^= *(p+j);                *(p+j) ^= *(p+j-1);            &#125;        &#125;    &#125;&#125;
+选择排序1234567...
+    
+
+        <a href="/2017/01/12/cixu2srw500020b8msgxe3y4m/" class="post-more waves-effect waves-button">
+            阅读全文...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/排序/">排序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>thanatosx的博客 &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/&title=thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/&title=thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=thanatosx的博客&url=http://thanatosx.net/&via=http://thanatosx.net" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABTklEQVR42u3aQQ6AMAgAQf//aX1AY12gmli2J6OmjgcpQo8Dj3MY49XxzvHq4iFL1kasczrm9/CZ+bNkyerMups0ejwPEORZsmTJIqy7j58s7bJkyVobIKJDlixZhJWbbh4sPsrlZcnagsWrOvXjV+pbsmT9nJVbbgm9tKjLktWMxT/gKDcaIGTJ6szikxIQ+d1FZSZZspqxyGYCXtKNvuRD+JAlqw0r15iMJsc89MiS1ZNFGpb8Hl78Rcm0LFnNWGSh5Rvy+BkElSWrDSua/uZ6OOEGqixZLVkkRY6WinJXZcnqzKrsVqi3RR/+rWXJ2pqV2wrAS0XRkrEsWT1Zq1Le3AK/YMiStRGLBwUeICoBRZaszixeyfk0JsmSJQsHiHC5lndfZcmSFSzC5n6Ak31XWbI2ZdWLR7klHDVXZMlqwKpksPzFXhmyZO3AugCOLcVt+VwzDQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.5"></script>
+
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+
+
+
+
+
+</body>
+</html>
