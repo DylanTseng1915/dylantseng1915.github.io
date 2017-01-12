@@ -27,7 +27,7 @@ onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派�
 onTouchEvent(MotionEvent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解Android触摸事件处理程序">
-<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/index.html">
+<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/index.html">
 <meta property="og:site_name" content="thanatosx的博客">
 <meta property="og:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
 
@@ -42,7 +42,7 @@ onTouchEvent(MotionEvent">
 <meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram06.png">
 <meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram07.png">
 <meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram08.png">
-<meta property="og:updated_time" content="2017-01-12T08:10:36.000Z">
+<meta property="og:updated_time" content="2017-01-12T12:05:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解Android触摸事件处理程序">
 <meta name="twitter:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
@@ -237,7 +237,8 @@ onTouchEvent(MotionEvent">
                     <img src="/images/touch_progress/TouchProgram06.png" alt="图1.6" title="">
                 </div>
                 <div class="image-caption">图1.6</div>
-            </figure><br>这种情况下<code>ACTION_DOWN</code>流经<code>Layout02</code>的<code>dispatchTouchEvent</code>时就很干脆的断了，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就直接派发给自己的<code>onTouchEvent</code>处理，相当于<code>Layout02</code>在说：我不往下派发了，直接交给我来处理吧！</p>
+            </figure></p>
+<p>这种情况下<code>ACTION_DOWN</code>流经<code>Layout02</code>的<code>dispatchTouchEvent</code>时就很干脆的断了，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就直接派发给自己的<code>onTouchEvent</code>处理，相当于<code>Layout02</code>在说：我不往下派发了，直接交给我来处理吧！</p>
 <p>还有些比较极端的情况：如果让<code>Layout03</code>的<code>onTouchEvent</code>来消费<code>ACTION_DOWN</code>事件，后续事件在流经<code>Layout02</code>的<code>dispatchTouchEvent</code>的时候就返回了<code>true</code>呢？<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -258,7 +259,7 @@ onTouchEvent(MotionEvent">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-12T08:10:36.000Z" itemprop="dateUpdated">2017年1月12日 16:10</time>
+    最后更新时间：<time datetime="2017-01-12T12:05:52.000Z" itemprop="dateUpdated">2017年1月12日 20:05</time>
 </span><br>
 
 
@@ -291,7 +292,7 @@ onTouchEvent(MotionEvent">
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,22 +302,22 @@ onTouchEvent(MotionEvent">
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -341,7 +342,7 @@ onTouchEvent(MotionEvent">
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/12/cixu79ffq00054v8mgfyglfqn/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/12/cixuc7yy60005ac8mnghe0f6y/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Android Looper、Message、Handler、MessageQueue源码解析</h4>
       </a>
@@ -415,7 +416,7 @@ onTouchEvent(MotionEvent">
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -425,22 +426,22 @@ onTouchEvent(MotionEvent">
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu79ffp00044v8m3e57di1x/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -451,7 +452,7 @@ onTouchEvent(MotionEvent">
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aOY7DMAwF0Nz/0pk2Rex8kvYAkp+rAPGip4IQl9crvt4H1/k9R/8m73/dcWFgYCzLeJ9en/cc/T5a9Dmj+v4fVAwMjAcwjiJYvvTz5eah9ui7P9aMgYGBEd9TDannR0MMDAyM+RKTcNlLaDEwMDB6Seyk3DY/hl6Wi2NgYCzIyKvu///7lv4GBgbGUox38aoW+u9oBnx5MwYGxtaMq1qYeQp6X7qLgYGxKyNJCJOlVENztZHwo1GKgYGxNaNXSssHv+bvz4M7BgbGrow87cz/rSax+YBFoRaIgYGxESM6csUHtfydk1Q2QmJgYGzKSADV8ln1EFn9CgYGxnMYSXjNj3HVBsMkyH7JxTEwMLZmnN86H5uYtEujoyoGBsbWjGqg7CWik6GNfNMxMDCeycibBPmi8+T2soCLgYGxOGMSLvNn8wQVAwMDI0li80GuatHtqo1odkoxMDCWZSTLuioRvbHQhoGB8QDG/MN5GE22bJRCY2BgbMfIC2e9vemxywEdAwPjMYzk6h0l8y3Iw3qhs4GBgbE4ozri0Cu05d+qbgcGBsbejF6orSITTPLU4fZhYGBszZgEu2ozoHfsq7YNMDAwdmVMBiMSZHWootngxMDAeAAjKejPG5m98Y4EiYGBgTEfmJgPW5RHwTAwMDCKaW2vDHdZ2xIDA2MLRp7Eni+iOq7RO4BekItjYGAsxaieu/IPVNuWeTGu2cjEwMBYj/EHX7B6wOPaFfgAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aS3LCQAwFQO5/abLNAsyTNAnlmZ4VRRnbzUKl3+MRn+ebc33N9ffJbxcfDAyM2zKel+f3NVXS9ef8+uSJGBgYJzDyWye/evcq1VCevBsGBgbGNaMapqvhGwMDA6PKqJagvbIWAwMDY1LE9tpt14njF2pxDAyMGzLyrvv/f/6T+QYGBsatGM/iSdpqefLXC7Iv7oyBgbE1Y23jrNekS1LGqJTFwMDYlJEUhNWRQP4q+Z/1oRjGwMDYmpEEweSR1VZab4T5YeEDAwPjYEZ1YDBPN5c13TAwMLZg5IPG3kpEHmR74RgDA+MExmS1dD6SzNcmMDAwMKoN+rxMXTvmjOYbGBgYWzN6bf08ZPeK20LdioGBsTWjnIS11ibylHRBQomBgbEpI29+rWrJ5esXhbEBBgbG1oxJi783ZugFdAwMjNMYefmaL4QlZz4WbVbhGBgYt2Xkqd4klZyMDaJ+IQYGxqaMPKXL17N6xXC1kffiHTAwMA5gJC+XF7TVsN5bL8PAwDiNUQ2y1VFldXWs3DXEwMDYmtFr1vfK1MKMovV0DAyM/RhrG/pJ6OyF4w9pIgYGxtaMebCr3noyyOwlphgYGHsweiXr5D/LQzAGBgbGpKGfDzvnix3RKhsGBgZG3Dir5qF5cRv5MDAwMAarFb02XGGQgIGBcQCjtwCRl7u9KwvhGAMDY2tGNe/qtd4m44F56YuBgXFbxg+UAsJ4EhmMEAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
