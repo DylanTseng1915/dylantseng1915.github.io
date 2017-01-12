@@ -27,22 +27,22 @@ onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派�
 onTouchEvent(MotionEvent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解Android触摸事件处理程序">
-<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/index.html">
+<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/index.html">
 <meta property="og:site_name" content="thanatosx的博客">
 <meta property="og:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
 
 dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
 onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
 onTouchEvent(MotionEvent">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/66008afa-fdb6-46f8-a14f-28bc1f500c58">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/8897bafe-ae2d-4f1f-b0a4-752475bd486d">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/b5dd340d-da54-4d12-83b2-eb321cc7001d">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/71fd563b-2063-461a-bbf7-0a5a0f82406b">
-<meta property="og:image" content="https://app.yinxiang.com/shard/s59/res/da16d60f-f3ea-4d8b-b1ef-edfece91d26e">
-<meta property="og:updated_time" content="2017-01-12T07:30:46.000Z">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram00.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram01.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram03.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram04.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram05.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram06.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram07.png">
+<meta property="og:image" content="http://thanatosx.net/images/touch_progress/TouchProgram08.png">
+<meta property="og:updated_time" content="2017-01-12T08:10:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="详解Android触摸事件处理程序">
 <meta name="twitter:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：
@@ -50,7 +50,7 @@ onTouchEvent(MotionEvent">
 dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件
 onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件
 onTouchEvent(MotionEvent">
-<meta name="twitter:image" content="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce">
+<meta name="twitter:image" content="http://thanatosx.net/images/touch_progress/TouchProgram00.png">
     
         <link rel="alternative" href="/atom.xml" title="thanatosx的博客" type="application/atom+xml">
     
@@ -196,60 +196,60 @@ onTouchEvent(MotionEvent">
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/80258c20-0b00-4523-b683-31f49ed091ce" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram00.png" alt="图1.1布局文件" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.1布局文件</div>
             </figure>
 <p>首先，按下<code>Layout03</code>，事件流程如图所示：</p>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/66008afa-fdb6-46f8-a14f-28bc1f500c58" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram01.png" alt="图1.2" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.2</div>
             </figure>
 <p>按下的时候总共有触发两个事件：<code>ACTION_DOWN</code>和<code>ACTION_UP</code>，但是因为整个事件流程中并没有哪个组件消费了<code>ACTION_DOWN</code>事件，而<strong>只有在<code>onTouchEvent</code>中消费了<code>ACTION_DOWN</code>事件，后续事件<code>ACTION_UP</code>,<code>ACTION_MOVE</code>…才会触发</strong>，所以这里<code>ACTION_DOWN</code>事件一路挥歌直下，<code>ACTION_UP</code>则并没有发生。</p>
 <p>我们让<code>Layout02</code>的<code>onTouchEvent</code>返回<code>true</code>，消费<code>ACTION_DOWN</code>事件，事件流程如图所示：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/8897bafe-ae2d-4f1f-b0a4-752475bd486d" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram03.png" alt="图1.3" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.3</div>
             </figure></p>
 <p>可以看到<code>Layout02</code>的<code>onTouchEvent</code>消费<code>ACTION_DOWN</code>事件之后便不在往下传了，后续事件也随后开始出现，并且<code>Layout02</code>直接将后续事件派发给消费者。所以<strong>当一个组件消费了<code>ACTION_DOWN</code>事件时，后续事件从窗口传到该组件的<code>dispatchTouchEvent</code>之后便直接交给它的<code>onTouchEvent</code>方法处理</strong></p>
 <p>我们在<code>Layout02</code>的<code>onInterceptTouchEvent</code>里返回<code>true</code>，事件流程如下：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram04.png" alt="图1.4" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.4</div>
             </figure></p>
 <p>这时候事件传递就会发生<strong>截断</strong>的情况，<code>ACTION_DOWN</code>经过<code>Layout02</code>的<code>onInterceptTouchEvent</code>时被强制直接交给自己的<code>onTouchEvent</code>继续传递。此时如果<code>Layout01</code>的<code>onTouchEvent</code>消费此事件：<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/b5dd340d-da54-4d12-83b2-eb321cc7001d" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram05.png" alt="图1.5" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.5</div>
             </figure></p>
 <p>则后续事件就直接传递给<code>Layout01</code>的<code>onTouchEvent</code>处理了，如果让<code>Layout02</code>的<code>dispatchTouchEvent</code>直接返回<code>true</code>呢？<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/c9a03f8c-eb97-49a0-a922-09fcfc3331e1" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram06.png" alt="图1.6" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.6</div>
             </figure><br>这种情况下<code>ACTION_DOWN</code>流经<code>Layout02</code>的<code>dispatchTouchEvent</code>时就很干脆的断了，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就直接派发给自己的<code>onTouchEvent</code>处理，相当于<code>Layout02</code>在说：我不往下派发了，直接交给我来处理吧！</p>
 <p>还有些比较极端的情况：如果让<code>Layout03</code>的<code>onTouchEvent</code>来消费<code>ACTION_DOWN</code>事件，后续事件在流经<code>Layout02</code>的<code>dispatchTouchEvent</code>的时候就返回了<code>true</code>呢？<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/71fd563b-2063-461a-bbf7-0a5a0f82406b" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram07.png" alt="图1.7" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.7</div>
             </figure><br>如图所示，后续事件在<code>Layout02</code>的<code>dispatchTouchEvent</code>就消失了，不再往下传递，<code>Layout03</code>也就接收不到<code>ACTION_UP</code>,<code>ACTION_MOVE</code>之类的后续事件了。最后，如果不在<code>Layout02</code>的<code>dispatchTouchEvent</code>返回<code>true</code>，而是在它的<code>onInterceptTouchEvent</code>返回呢？<br><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://app.yinxiang.com/shard/s59/res/da16d60f-f3ea-4d8b-b1ef-edfece91d26e" alt="" title="">
+                    <img src="/images/touch_progress/TouchProgram08.png" alt="图1.8" title="">
                 </div>
-                <div class="image-caption"></div>
+                <div class="image-caption">图1.8</div>
             </figure><br>这时候事件到达<code>Layout02</code>的<code>onInterceptTouchEvent</code>之后就变成了<code>ACTION_CENCEL</code>，直到传递给消费者。</p>
 
         </div>
@@ -258,7 +258,7 @@ onTouchEvent(MotionEvent">
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-01-12T07:30:46.000Z" itemprop="dateUpdated">2017年1月12日 15:30</time>
+    最后更新时间：<time datetime="2017-01-12T08:10:36.000Z" itemprop="dateUpdated">2017年1月12日 16:10</time>
 </span><br>
 
 
@@ -291,7 +291,7 @@ onTouchEvent(MotionEvent">
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -301,22 +301,22 @@ onTouchEvent(MotionEvent">
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -341,7 +341,7 @@ onTouchEvent(MotionEvent">
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/12/cixu2srvw00000b8m66pvaoy1/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/12/cixu7229500071n8mbmaarwpr/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Android Looper、Message、Handler、MessageQueue源码解析</h4>
       </a>
@@ -371,7 +371,7 @@ onTouchEvent(MotionEvent">
     <ul class="reward-items">
         
         <li>
-            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
             <p>微信</p>
         </li>
         
@@ -415,7 +415,7 @@ onTouchEvent(MotionEvent">
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -425,22 +425,22 @@ onTouchEvent(MotionEvent">
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&title=《详解Android触摸事件处理程序》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu2srwj00070b8m87jsxsep/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixu7229400061n8mcd3ih6qy/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -451,7 +451,7 @@ onTouchEvent(MotionEvent">
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aQW7DMAxE0dz/0u42QGr5DyUvRH2vgiK187wghhQ/H3xdP9f338n37/7r9/PdPRdcMmTI2JZxDS/C4A/mGP7bZMiQcQ6j9shx3ePUWkGXIUOGjPHtePhL7yBDhgwZaxk8OBIYL+4yZMg4kzFTQB/ayzACvt6Ly5AhY0PGe2Oy+c+vnG/IkCFjK8YVXmkR5KGQ3/+fJ8qQIaM1gxe4NPzxVYz0/rcvSIYMGU0ZaftKhvvjH5oO0VDJliFDxgEMPsTnJBL7eBB8CJQyZMg4jFFrI9fi49GbDBkyDmDMH1vyH5RGSRRGZciQ0ZrB28h0OYNERlJSi2sWMmTIaMdIxbWmdH4y9vAKZMiQcQCjFvh4iEzb6Xi0J0OGjNaMVWU3DYLpq0GFWIYMGQcw0pF9bbgW7KyFSBkyZHRl8JHZ/MPeWO+QIUPGCYzxTfmyVy1u1gJisHghQ4aMdgzeiPLR//xyRgCTIUNGU0a6HFYLf7X1i2CxQ4YMGQcw0ijGwfNHpEEvLkOGjNaM2iCMt6a8SV4waJMhQ0ZTRnpIMLMKVjvgfIiVMmTIaMq4wousZfC2k5RgtEYmQ4aM1ozaAWd6xFh7KekxgwwZMnoz0iK76jCSl29UcGXIkHEAgwz0+XhuprDW1tdkyJAh4w1SWoiRT4YMGTImWlwe9UirvKDgypAhY0NGbSWCl+MaNfimDBkyWjPS3JUO5kiBTov7gvgoQ4aMPRh/xMPwLicEKKkAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIElEQVR42u3aQW7DMAwF0dz/0u62QFt5PikXsDhaBYkd63lBkCI/H7yuP9b6mvX35N7NS4YMGa9lXMv1/Zr1vT+/X3/m15OXKEOGjAkM/tc87q2pJJSTvcmQIUNGek0aaklaKUOGDBm1LfJwGWyl9PpkyJAxh8E3lP7a2fojtbgMGTJeyOCl6f9/fqS/IUOGjFcxrnCRYzXSkkzvvdmVDBkyjmbUWpjr4Eh+5eVukGjKkCFjAKOzlVr5uquRIEOGjDmMTqpHgiYZxUgHL2TIkCFjb6vg8VNDGTJkDGCQpK3WPkxLWT7MIUOGjGkMfgTGE77+S5EhQ4YM8kg+eNFJKG8KVBLKZciQMYCR/h0vR1MGKWh/+V6GDBlHM3igfCKhRIf+ePxChgwZ5zH6oTAtQXmLgrdFZciQMYfB08Q01NaO24KEVYYMGQMYfNP9lmfaTmhNi8iQIeMIRnpY3wmLPPUsNgxkyJBxNIOXlLWD+87Rf4qUIUPGqYxaQsbfTS2tjJsHMmTIGMColaC13Cw9tkMJogwZMo5m1FqSvLUQj3Y1ni5DhozzGFe41g8gR2y1cHwT7mXIkHE0Y+/pOkfytI+3P2XIkHE2I20u8neTDpB1BjVkyJAxgcEDJS9cawNhxfEOGTJkyGiUmrVDtziHlSFDhgwcIjk15d2QZMiQMYDBi9g0yO4qjDfX4jJkyHgVI827UnA6tMEDsQwZMgYwvgBCfetBNTWSTAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
