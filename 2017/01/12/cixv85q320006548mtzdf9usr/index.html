@@ -23,7 +23,7 @@
     <meta name="description" content="在Android开发过程中，Message和Handler是经常会使用到的类，我们对它们广泛的认知是为了在异步任务中更新主线程的UI，因为在主线程处理耗时的任务是会ANR的。Message和Handler普遍使用的场景是HTTP请求，HTTP请求可能会造成长时间的线程阻塞，一般来说都是新开一个线程处理请求任务，在数据最终返回的时候调用Handler的handlerMessage方法，交给主线程处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Looper、Message、Handler、MessageQueue源码解析">
-<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/index.html">
+<meta property="og:url" content="http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/index.html">
 <meta property="og:site_name" content="thanatosx的博客">
 <meta property="og:description" content="在Android开发过程中，Message和Handler是经常会使用到的类，我们对它们广泛的认知是为了在异步任务中更新主线程的UI，因为在主线程处理耗时的任务是会ANR的。Message和Handler普遍使用的场景是HTTP请求，HTTP请求可能会造成长时间的线程阻塞，一般来说都是新开一个线程处理请求任务，在数据最终返回的时候调用Handler的handlerMessage方法，交给主线程处理">
 <meta property="og:image" content="http://thanatosx.net/images/looper_message_handler/001.jpg">
@@ -321,7 +321,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -331,22 +331,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -369,7 +369,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/01/12/cixuc7yya0006ac8mbmr9qo2e/" id="post-prev" class="post-nav-link">
+      <a href="/2017/01/12/cixv85q340007548mp2t4h1ve/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">详解Android触摸事件处理程序</h4>
       </a>
@@ -378,7 +378,7 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/12/cixuc7yy50004ac8ml6k7tnet/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/12/cixv85q360008548m8cof1boe/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">聊聊Android Theme的那些事</h4>
       </a>
@@ -452,7 +452,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&pic=http://thanatosx.net/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -462,22 +462,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&source=我该说点什么呢？" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/&via=http://thanatosx.net" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — thanatosx的博客&url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/&via=http://thanatosx.net" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixuc7yy60005ac8mnghe0f6y/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://thanatosx.net/2017/01/12/cixv85q320006548mtzdf9usr/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -488,7 +488,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a0W7jMAwEwPz/T+deCxR1dinnAEujpyCwHY0LsBTJ1yte7x/r9/fX1/++9/rzX8+8YWFgYDyW8b5cyTXXP5xcmcA+PAcDA+MARv7oPNTmYTQJzR9+HQMDAyMOiNfPTKgYGBgY3wi4eULZHowxMDAw2kNse9csBfz6WRwDA+OBjLzq/v8/f6W/gYGB8SjGu1xtQa29crgrDAyMrRl5gGuTv5XmQbsfDAyMcxiz4lc7nNEW0ZJdYWBgnMC4DoJ5QGzTvhZc/00wMDC2YOQtxvya/NXMQm2dt2JgYDycsT7i0IbLe0t4HyZHMDAwNmIkCd/KwTIvz+XdyawCh4GBsRsj/2Y2LtYejNsmBAYGxjmMWTmsbSckZ88aiYGBsTWjTsKCEJykiXXvIgnEGBgY2zHyJK+lti+lPR5jYGCcw2iHLWZtg/yl3BCUMTAwtmPMfiZPB/NhizbFfK2/LQwMjMcyXuVq43pevCsapRgYGFsz1pPCdlQiv7c+EmNgYBzGWEklVxLQpZeIgYFxDKMddJhtPW8/DOuFGBgYhzFmjcY2ZZyliRgYGCcw3uVqtzUL3G1rEwMDY29G2wBYGdhKNpcfYtswjYGB8XRGEiLbAtlswGIp4GJgYBzAWB+kaNuis1Tvz3QTAwMDY1S4zw+xSSCOfBgYGBh5+BuF4Dy43/Z/AwMD41GM5BDbbiIPuytNUAwMjBMYbd6VH1DbUbA8uN+QPmJgYDyD8Q+o2WqYA9aphgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aS04DMRAFQO5/6SCxQoKM3msPSGOXV1ESJi4vmv744yNer6+VvPN9vfv03fOvv3PDwsDAeCzjdbl+bvrn6+u/vX7CXc/HwMA4gXEdZJMg2B5HEnCTvWFgYGAkW2w3gYGBgfGfAXeWDrapJwYGBkYeOpNWWv6cvKC9uRbHwMB4IKMdDPzn6z+cb2BgYDyE8RqtWSv/epy5VDBjYGBszUiuQbStsXtHCEUgxsDAOIDRXoxoy8tZ2C2OHgMDY1PGrEG/MrBszzj6N4CBgXEMo236tz/fppJF0omBgXEAY2UY0Ba9edWZHyIGBsbejFlbLdncyoWJ9SdgYGCcw5gF0JU0MTm+2TADAwPj6YwksM4Sx3wrN7TtMDAwtmasJHzrQ9CVajTqI2JgYDyckQTHWSu/vWyRBN+3R4OBgbE1Y30auDKSnF2/wMDAOJORJ3Z5gywJo/n7RbsNAwNjU8Z6YpeXoG2EbMM6BgbGrow8/K1flchTw3w/GBgY5zDysnN2PaINu+1QEwMD4wRGeyVi1mJrQ21xIQMDA2NrRl6Utt9ZGXnmySIGBsbejFe5ZsllPiRIiupffhcDA2NrRhvs2pb9+gUyDAwMjFnRmI8VZ9PU2R4wMDBOYLSBb2Xk2V7UiMYPGBgYGG0uuZAOtm07DAwMjLuaYu3ljLoAxsDAOICRJ3P3FrHt5bMic8TAwNiIMRsMFOVleWSzsQQGBsamjE96ttsZWD34eQAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
