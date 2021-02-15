@@ -24,7 +24,7 @@
     <meta name="description" content="在Android开发过程中，Message和Handler是经常会使用到的类，我们对它们广泛的认知是为了在异步任务中更新主线程的UI，因为在主线程处理耗时的任务是会ANR的。Message和Handler普遍使用的场景是HTTP请求，HTTP请求可能会造成长时间的线程阻塞，一般来说都是新开一个线程处理请求任务，在数据最终返回的时候调用Handler的handlerMessage方法，交给主线程处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android Looper、Message、Handler、MessageQueue源码解析">
-<meta property="og:url" content="https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/index.html">
+<meta property="og:url" content="https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/index.html">
 <meta property="og:site_name" content="Dylan Tseng 的博客">
 <meta property="og:description" content="在Android开发过程中，Message和Handler是经常会使用到的类，我们对它们广泛的认知是为了在异步任务中更新主线程的UI，因为在主线程处理耗时的任务是会ANR的。Message和Handler普遍使用的场景是HTTP请求，HTTP请求可能会造成长时间的线程阻塞，一般来说都是新开一个线程处理请求任务，在数据最终返回的时候调用Handler的handlerMessage方法，交给主线程处理">
 <meta property="og:image" content="https://dylantseng1915.github.io/images/looper_message_handler/001.jpg">
@@ -385,7 +385,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -395,22 +395,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&via=https://dylantseng1915.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -433,7 +433,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/01/12/ckl68xa4w0008saz12s0m7jnv/" id="post-prev" class="post-nav-link">
+      <a href="/2017/01/12/ckl692r620008pvz124iqek19/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">详解Android触摸事件处理程序</h4>
       </a>
@@ -442,7 +442,7 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/12/ckl68xa4u0007saz1go80435w/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/12/ckl692r600007pvz1bxf3fmrt/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">聊聊Android Theme的那些事</h4>
       </a>
@@ -516,7 +516,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -526,22 +526,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&title=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android Looper、Message、Handler、MessageQueue源码解析》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/&via=https://dylantseng1915.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl68xa4a0000saz12qll63va/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl692r5l0000pvz16hq192d2/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -552,7 +552,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3awWojMRAE0Pz/T2dhT1mM7apuCWfhzcnYHktvApJS3V9f8fX99/r5+vF6/P7jXc++k/zO46fHLjw8PLzR1F8P9oz3bOqnRkzm8OYR4OHh4V3jJZvB69ftcp88mnzcp+/j4eHhfZQ3W76To3Z7KMfDw8P7X3jt8HmUkB/l8fDw8H4PL48G2om2x+vZfA5kLXh4eHgxb1YA++zr6/U9PDw8vMUifnaBbstsm3ni4eHh3eC9DlKTTSIJZ1eT2zcu4OHh4R3l7Q+ybXNAG2rMeP/se3h4eHhHefvi1r1EJGkviEbHw8PDu8BrD9Cn7joVahx7inh4eHglb5NnbLaQNtqYbR54eHh4Z3mb4tasiapl5PHHmwIYHh4e3iFeFIYu4tTN8frYQR8PDw/vKK+NZfNFefN+stwnwS4eHh7eDV5+w2air39t1kxQH8rx8PDw1rxZlJAEE5slfoPEw8PDu83bl+Tbw27+aX5czrcWPDw8vFO8TbG/jSqSg3X+NylaB/Dw8PAu8NpjbttKlS/lbctX0RmBh4eHd4g3W9bbQn5bYGubt4YpNR4eHt6C13Zp5TFEHrZuWgSilAUPDw9vzcsL/PkSnN+VNxzMwmU8PDy8G7z8sNuW82chxewhFv8l4OHh4R3lbQpU7cB5rNA+pjqlxsPDwxvxZmFrXspKSFfyFTw8PLxrvHaBzifdFrRmha43DwsPDw/vMi9ZjtvWqHyJr/extgyGh4eHt+btF+h9C8Ishog2ITw8PLwLvNnw+VYxSwnOBrt4eHh4N3izzWDWXJXHuHlkjIeHh/cp3qbUlDyIfajRsvHw8PB+Jy9frPPNJn+gUcMBHh4e3kd5bSQxC4jz5q3o/IyHh4d3jdcOvG+TatsUZlsIHh4e3g3erADWbgztvbMYYkjFw8PDS8f6A3ZBVLnhZAr5AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtElEQVR42u3a207jUAwFUP7/p5nXkYB0+wYIrTxVVZqclUjHru23t/h4/+J4Puf5t89n/v/Nx8/LBx4eHt7S0pMbJ7/9eK+v7l49J7ovHh4e3hnveSk9avLbrUfw5fd4eHh4v4D3nEAn+W01XcbDw8P7S7zkv3+OqQYYPDw8vJ/l9S5dDQkJLA8qy7UWPDw8vFp9dSEV/s7PJ/09PDw8vHFXPW9oTbbmalOtsFo8PDy8A16+4SbjVkl7bJIQV9eJh4eHd8GrjklNzu+lxXnj7ZPPeHh4eAe8fBHVwalkidUib96cK88d4OHh4Q3qn0kbLOflifL3JOV4eHh4W7zJIiahYtKvawYDPDw8vCXevGibt7J6V+g1zPDw8PCueUkxopr4Vh/BpNwQvTE8PDy8Vd7dhr7bYOuVofHw8PAueL0NvZeU5wWOrQYbHh4e3hYv+TM/uU1SMuiVG5I74uHh4V3wnjfxSQm1es08hJRfAB4eHt4BL0dOkuNkkCv/B1Du7OHh4eEd8CZDUdV0uUeqpu94eHh4F7ze+FRv+CkHzAMMHh4e3h2v11hKNv2LtHsh4uHh4eEt8XrjU9Vt/XkRW7BPro+Hh4e3yttKeasBI0/Zq4MC0XvDw8PDG/DyzXqeo1abW3lwej4fDw8P75pX3aarTbLqKEDyQF80zPDw8PCOeZMZhElTqlrCKJSY8fDw8M54W+lyEiompYf8BeDh4eFd8N6LR6+VVW32542uFy8JDw8P74CXH1sFi0L5tVWGKMPw8PDwWrx86Uk6mxcjEmr1aqM3g4eHh1fklYeZWqXevDxRDVovAgMeHh7ej/LygkUeBnpBJWqz4eHh4f0CXp5YbxUmeg8UDw8P75qXl2irTa9e8bdarn0RGPDw8PBWeb3Bpl7zPi8W9x5B88DDw8NL7/UPYeBzqILmLMgAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
