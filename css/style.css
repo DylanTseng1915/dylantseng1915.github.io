@@ -3612,13 +3612,8 @@ pre .javascript .function {
 .post-widget {
   float: right;
   width: 20%;
-  padding-left: 30px;
   min-height: 1px;
-}
-.post-widget + .post-article {
-  float: left;
-  width: 80%;
-  padding-right: 30px;
+  margin-right: -20%;
 }
 .post-toc-wrap {
   position: fixed;
