@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>聊聊Android Theme的那些事 | Dylan Tseng 的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android,Theme">
+    <meta name="description" content="1. 概述话说Android里面的主题真是琳琅满目，虽然平时开发时我们都是固定，约定成熟的使用某个主题，例如官方推荐的AppComat系列，但是Android有多少主题，它们之间有什么联系和区别很少人去认真探究。我本人开发时都是直接使用Android Studio生成的主题，或者是继承至它。Holo主题基本没有使用过，似乎是一个比较老的主题，比我早接触Android的前辈们应该比较熟悉。Mater">
+<meta property="og:type" content="article">
+<meta property="og:title" content="聊聊Android Theme的那些事">
+<meta property="og:url" content="https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/index.html">
+<meta property="og:site_name" content="Dylan Tseng 的博客">
+<meta property="og:description" content="1. 概述话说Android里面的主题真是琳琅满目，虽然平时开发时我们都是固定，约定成熟的使用某个主题，例如官方推荐的AppComat系列，但是Android有多少主题，它们之间有什么联系和区别很少人去认真探究。我本人开发时都是直接使用Android Studio生成的主题，或者是继承至它。Holo主题基本没有使用过，似乎是一个比较老的主题，比我早接触Android的前辈们应该比较熟悉。Mater">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/001.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/002.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/003.png">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/004.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/005.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/006.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/007.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/008.png">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/009.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/010.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/011.png">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/012.jpg">
+<meta property="og:image" content="https://dylantseng1915.github.io/images/android_theme/013.jpg">
+<meta property="article:published_time" content="2017-01-12T07:26:50.000Z">
+<meta property="article:modified_time" content="2021-02-14T14:01:43.639Z">
+<meta property="article:author" content="Dylan Tseng">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Theme">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dylantseng1915.github.io/images/android_theme/001.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="Dylan Tseng 的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.png">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Dylan Tseng</h5>
+          <a href="mailto:dylantseng1915@gmail.com" title="dylantseng1915@gmail.com" class="mail">dylantseng1915@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/DylanTseng1915" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">聊聊Android Theme的那些事</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">聊聊Android Theme的那些事</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-12T07:26:50.000Z" itemprop="datePublished" class="page-time">
+  2017-01-12
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-概述"><span class="post-toc-number">1.</span> <span class="post-toc-text">1. 概述</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-一些主要的根主题以及它的继承结构"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. 一些主要的根主题以及它的继承结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-如何追溯到这些Theme？"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">2.1 如何追溯到这些Theme？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-它们有什么区别呢"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">2.2 它们有什么区别呢?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-只有这些根主题吗"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">2.3 只有这些根主题吗?</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-4-如此多的子主题，我们该如何抉择？看看它的继承结构。"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">2.4 如此多的子主题，我们该如何抉择？看看它的继承结构。</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-自定义样式"><span class="post-toc-number">3.</span> <span class="post-toc-text">3 自定义样式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-坑"><span class="post-toc-number">4.</span> <span class="post-toc-text">4 坑</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-聊聊Android-Theme的那些事"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">聊聊Android Theme的那些事</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-01-12 15:26:50" datetime="2017-01-12T07:26:50.000Z"  itemprop="datePublished">2017-01-12</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Android/">Android</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><p>话说Android里面的主题真是琳琅满目，虽然平时开发时我们都是固定，约定成熟的使用某个主题，例如官方推荐的AppComat系列，但是Android有多少主题，它们之间有什么联系和区别很少人去认真探究。我本人开发时都是直接使用Android Studio生成的主题，或者是继承至它。Holo主题基本没有使用过，似乎是一个比较老的主题，比我早接触Android的前辈们应该比较熟悉。Material主题就属于比较新的主题。还有呢？</p>
+<h2 id="2-一些主要的根主题以及它的继承结构"><a href="#2-一些主要的根主题以及它的继承结构" class="headerlink" title="2. 一些主要的根主题以及它的继承结构"></a>2. 一些主要的根主题以及它的继承结构</h2><p>这里我使用了“根主题”的说法，因为大多数主题都是继承至某个主题，追根究底，会找到几个没有parent的根主题。我们来看看这几个根主题：</p>
+<ul>
+<li><p><strong>Theme</strong>：API 10及其以下的默认主题。</p>
+</li>
+<li><p><strong>Theme.Holo</strong>：API 11 - 13的默认主题，</p>
+</li>
+<li><p><strong>Theme.Material</strong>：API 21及其以上。</p>
+</li>
+</ul>
+<h3 id="2-1-如何追溯到这些Theme？"><a href="#2-1-如何追溯到这些Theme？" class="headerlink" title="2.1 如何追溯到这些Theme？"></a>2.1 如何追溯到这些Theme？</h3><p>你可以随便新建一个Theme，parent继承至<code>Theme.AppCompat</code>，按住<code>Ctrl</code>(在Mac上是<code>Command</code>)点击parent主题，这样一直追溯到<code>Platform.AppComat</code>会有几个选择：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/001.jpg" alt="platform version list" title="">
+                </div>
+                <div class="image-caption">platform version list</div>
+            </figure>
+
+<p>到这里，Theme的继承就区别开来了，<code>/values.xml</code>最终会继承至<code>Theme</code>，<code>/values-v11.xml</code>和<code>/values-v14.xml</code>最终会继承至<code>Theme.Holo</code>，而<code>/values-v21.xml</code>会继承至<code>Theme.Material</code>。所以说，一般我们选择主题选择继承至<code>AppCompat</code>系列的主题就可以了(至少现在是如此)，<code>AppCompat</code>已经做好适配工作了。</p>
+<h3 id="2-2-它们有什么区别呢"><a href="#2-2-它们有什么区别呢" class="headerlink" title="2.2 它们有什么区别呢?"></a>2.2 它们有什么区别呢?</h3><p>据我所对比观察，它们的参数基本上相同：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/002.jpg" alt="Theme diff" title="">
+                </div>
+                <div class="image-caption">Theme diff</div>
+            </figure>
+
+<p>双方有些细微的增缺，只有值大不一样，但这并不影响什么，我们必要的时候直接去所关心的Theme那里了解一下目标参数。<strong>一个主题规范严格的app，风格的定义应该在App Theme上就得到了统一</strong>，这些根主题的参数给了我们修改，参考的依据，了解这些参数是很有必要的。</p>
+<h3 id="2-3-只有这些根主题吗"><a href="#2-3-只有这些根主题吗" class="headerlink" title="2.3 只有这些根主题吗?"></a>2.3 只有这些根主题吗?</h3><p>当然，Android系统如此庞杂，远远不止这些根主题，上述3个根主题所在的xml文件里定义了很多根主题，适当了解一下会有好处。</p>
+<h3 id="2-4-如此多的子主题，我们该如何抉择？看看它的继承结构。"><a href="#2-4-如此多的子主题，我们该如何抉择？看看它的继承结构。" class="headerlink" title="2.4 如此多的子主题，我们该如何抉择？看看它的继承结构。"></a>2.4 如此多的子主题，我们该如何抉择？看看它的继承结构。</h3><p>我先贴上一张自己总结的图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/003.png" alt="theme construction" title="">
+                </div>
+                <div class="image-caption">theme construction</div>
+            </figure>
+
+<p>我以<code>AppCompat</code>系列的主题为例，图中并没有将所有主题都收拢进去，毕竟太多了。图中枝节点的依据是这样子：例如<code>Base.TextAppearance.AppCompat.Widget.Actionbar.Subtitle.Inverse</code>这个style，已<code>.</code>为分割线，<code>Base</code>、<code>TextAppearance</code>…为节点作成的结构图。从图中可以很直观的得出结论：主题分为<code>TextAppearance</code>、<code>Theme</code>、<code>ThemeOverlay</code>和<code>Widget</code>4种。</p>
+<ul>
+<li><p><strong>TextAppeareance</strong>: 定义字体样式。</p>
+</li>
+<li><p><strong>Theme</strong>: 定义Dialog和Application的样式。</p>
+</li>
+<li><p><strong>ThemeOverlay</strong>: 定义悬浮层的样式，例如点击<strong>ActionBar</strong>上的更多或者下拉菜单弹出的悬浮界面的样式。</p>
+</li>
+<li><p><strong>Widget</strong>：顾名思义，定义<code>Button</code>之类的组件的样式。</p>
+</li>
+</ul>
+<p>如果你想使用某个字体主题或者自定义，你可以使用或者继承<strong>TextAppearance</strong>系列：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/004.jpg" alt="TextAppearance Theme" title="">
+                </div>
+                <div class="image-caption">TextAppearance Theme</div>
+            </figure>
+
+<p>同样的<strong>Theme</strong>系列：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/005.jpg" alt="Theme Theme" title="">
+                </div>
+                <div class="image-caption">Theme Theme</div>
+            </figure>
+
+<p><strong>ThemeOverlay</strong>系列：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/006.jpg" alt="ThemeOverlay Theme" title="">
+                </div>
+                <div class="image-caption">ThemeOverlay Theme</div>
+            </figure>
+
+<p><strong>Widget</strong>系列：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/007.jpg" alt="Widget Theme" title="">
+                </div>
+                <div class="image-caption">Widget Theme</div>
+            </figure>
+
+<p>Android的Style命名已经极大的便利我们使用，我们唯一要做的事就是根据业务需求了解某个主题的参数和值，并且在必要的时候复写它。</p>
+<h2 id="3-自定义样式"><a href="#3-自定义样式" class="headerlink" title="3 自定义样式"></a>3 自定义样式</h2><p>现在用实际行动来验证我们的猜想。我新建了一个Activity，它是这样子：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/008.png" alt="origin" title="">
+                </div>
+                <div class="image-caption">origin</div>
+            </figure>
+
+<p><code>Activity</code>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ActionBarActivity</span> <span class="keyword">extends</span> <span class="title">AppCompatActivity</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bind</span>(R.id.toolbar) Toolbar mToolbar;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(@Nullable Bundle savedInstanceState)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_action_bar);</span><br><span class="line">        ButterKnife.bind(<span class="keyword">this</span>);</span><br><span class="line"></span><br><span class="line">        mToolbar.setTitle(<span class="string">"Thanatosx"</span>);</span><br><span class="line">        mToolbar.setSubtitle(<span class="string">"Widgets"</span>);</span><br><span class="line"></span><br><span class="line">        setSupportActionBar(mToolbar);</span><br><span class="line"></span><br><span class="line">        ActionBar mActionBar = getSupportActionBar();</span><br><span class="line">        <span class="keyword">if</span> (mActionBar != <span class="keyword">null</span>)&#123;</span><br><span class="line">            mActionBar.setDisplayHomeAsUpEnabled(<span class="keyword">true</span>);</span><br><span class="line">            mActionBar.setHomeButtonEnabled(<span class="keyword">false</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onCreateOptionsMenu</span><span class="params">(Menu menu)</span> </span>&#123;</span><br><span class="line">        getMenuInflater().inflate(R.menu.menus, menu);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.onCreateOptionsMenu(menu);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Layout布局文件：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">LinearLayout</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:android</span>=<span class="string">"http://schemas.android.com/apk/res/android"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:orientation</span>=<span class="string">"vertical"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:background</span>=<span class="string">"#80123456"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">android:layout_height</span>=<span class="string">"match_parent"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">android.support.v7.widget.Toolbar</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:id</span>=<span class="string">"@+id/toolbar"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_width</span>=<span class="string">"match_parent"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">android:layout_height</span>=<span class="string">"wrap_content"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">LinearLayout</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>以及Theme主题：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>现在我们想要通过修改Theme来改变Toolbar的样式达到以下效果：</p>
+<ul>
+<li><p>改变返回图标</p>
+</li>
+<li><p>改变Title和Subtitle的字体大小和颜色</p>
+</li>
+<li><p>改变more icon的颜色</p>
+</li>
+</ul>
+<p>首先，第一个问题是：去哪里修改？前面说到，Theme主题基本可以定义一个Application的大部分地方的样式，我们需要去搜索一下父主题是否有这样的定义，从<code>Theme.AppCompat.Light</code>这个主题开始往上追溯，在<code>Base.Theme.AppCompat.Light</code>上会有个版本选择：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/009.jpg" alt="show version list" title="">
+                </div>
+                <div class="image-caption">show version list</div>
+            </figure>
+
+<p>这个无所谓，选择低版本的就可以了，低版本都支持的话就不用担心高版本，首先会在<code>Base.v7.Theme.AppCompat.Light</code>上发现Toolbar Style的定义：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/010.jpg" alt="found out toolbar style" title="">
+                </div>
+                <div class="image-caption">found out toolbar style</div>
+            </figure>
+
+<p>那么，我们就可以复写这个属性，自定义我们的Toolbar Style了，同样的，有个<code>actionOverflowButtonStyle</code>属性，它就是定义more icon button的属性了。</p>
+<p>修改后的Theme：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme"</span> <span class="attr">parent</span>=<span class="string">"Theme.AppCompat.Light"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!-- Customize your theme here. --&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowActionBar"</span>&gt;</span>false<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"windowNoTitle"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimary"</span>&gt;</span>@color/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"colorPrimaryDark"</span>&gt;</span>@color/colorPrimaryDark<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"actionOverflowButtonStyle"</span>&gt;</span>@style/AppWidget.ActionButton.Overflow<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"toolbarStyle"</span>&gt;</span>@style/AppTheme.Toolbar<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTheme.Toolbar"</span> <span class="attr">parent</span>=<span class="string">"Widget.AppCompat.Toolbar"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:minHeight"</span>&gt;</span>50dp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"titleTextAppearance"</span>&gt;</span>@style/AppTextAppearance.Widget.Actionbar.Title<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"subtitleTextAppearance"</span>&gt;</span>@style/AppTextAppearance.Widget.Actionbar.Subtitle<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"navigationIcon"</span>&gt;</span>@mipmap/ic_back<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:background"</span>&gt;</span>?attr/colorPrimary<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTextAppearance.Widget.Actionbar.Title"</span> <span class="attr">parent</span>=<span class="string">"TextAppearance.Widget.AppCompat.Toolbar.Title"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>14sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFF<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppTextAppearance.Widget.Actionbar.Subtitle"</span> <span class="attr">parent</span>=<span class="string">"TextAppearance.Widget.AppCompat.Toolbar.Subtitle"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textSize"</span>&gt;</span>12sp<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:textColor"</span>&gt;</span>#FFF<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">name</span>=<span class="string">"AppWidget.ActionButton.Overflow"</span> <span class="attr">parent</span>=<span class="string">"Widget.AppCompat.ActionButton.Overflow"</span>&gt;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">item</span> <span class="attr">name</span>=<span class="string">"android:src"</span>&gt;</span>@mipmap/ic_more<span class="tag">&lt;/<span class="name">item</span>&gt;</span></span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>parent继承至原使用的Style Theme，以此基础上重写自己需要修改的属性，最终效果图：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/011.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<h2 id="4-坑"><a href="#4-坑" class="headerlink" title="4 坑"></a>4 坑</h2><p>在修改Activity的返回按钮的时候我在<code>AppTheme</code>里找到这个属性：<code>homeAsUpIndicator</code>，老司机们肯定明白，这就是设置返回按钮的图标，但是无论我如何设置，修改，这个属性没有任何效果！！无奈之下，我去overflowstack上寻找答案，众说纷纭，倒是看到这个属性<code>navigationIcon</code>，我在Theme上没看到，在Toolbar的主题上也没有看到，但是当我进入Toolbar的源码，我发现是有这个属性的：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/012.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+
+<p>我直接跑去R.java文件去看，一目了然：</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="/images/android_theme/013.jpg" alt="r.java" title="">
+                </div>
+                <div class="image-caption">r.java</div>
+            </figure>
+
+<p><strong>源码之下，没有秘密</strong></p>
+<p>还有一点，设置<code>navigationIcon</code>之后，点击返回按钮没有任何响应了，需要设置Navigation Click Listener</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// after set support action bar</span></span><br><span class="line">mToolbar.setNavigationOnClickListener(<span class="keyword">new</span> View.OnClickListener() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View v)</span> </span>&#123;</span><br><span class="line">        finish();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-02-14T14:01:43.639Z" itemprop="dateUpdated">2021-02-14 22:01:43</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://dylantseng1915.github.io">
+            <img src="/img/avatar.png" alt="Dylan Tseng">
+            Dylan Tseng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/" rel="tag">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Theme/" rel="tag">Theme</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&title=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&title=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/12/ckl682lto0000b7z17fgt3g43/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android Looper、Message、Handler、MessageQueue源码解析</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/12/ckl682lu00002b7z1e4d3g8po/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">FragmentPagerAdapter与FragmentStatePagerAdapter的差异</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license noopener" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Dylan Tseng &copy; 2017 - 2021</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&title=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&title=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《聊聊Android Theme的那些事》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/ckl682lu70007b7z13r3mhkkp/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACt0lEQVR42u3ay07DMBAF0P7/T4PECgma3Hm4FOlkVVVp7ONF7N6ZxyO+Pr6u75+/f/Pz++r17MnP7ly+8PDw8FpTTwa+HvL6nmSU6nySp+Hh4eGd4/U2g/xX1QVKnnx9Dx4eHt478KqD9aZ4fSrGw8PD+1+85FB7Pa2tlz4eHh7eO/Cqf/53g9de8LGcteDh4eHFvPnwr/98vL6Hh4eH16qqJ8fl66clm8fk+H4zWzw8PLwDvCSizb+fwPJ2hGqwi4eHh7fLq06lN6Fec0C18PbLZzw8PLxjvN4xOidNpl4NiMv/GPDw8PAGvDwF3S1iVeMJPDw8vL/l5YWl6uSqT5sU5BZuxcPDwxvX2ZPXfR7j5pX9CenmCXh4eHhLvNe0C+QLl//qehEXshY8PDy8S16v4FQtiSXtCNWt4gaMh4eH90LevA2rVzCbbEW/3I+Hh4d3gJe8XucH38IkWqlstJHg4eHhrfKqYcEEX12I/Mi+kE/j4eHhBbxem1RvinnDwUd83Vjw8PDwjvHyyKAay86DidHWgoeHh3f21LrQpl9twOotRN6sgIeHh3eOlx9bJw1VyaayRcLDw8M7x8tfzcnGkG8D1epcs5UBDw8P7xhvd0vImxLyMLd3BMfDw8M7zeu9gvMyVe/OKvVRXSE8PDy8Fm83Zp20BSStYIV2MTw8PLwDvK33Z97A+giu3vH6pgCGh4eHt8TrBanV1qgqL1ncaKvAw8PDewlvMvX8GN0rdOXtXOW8BA8PD6+VefYS0V78Oo9uk894eHh453jVzaAXH+SLVd1gbjYnPDw8vGO8XgDRCy/yI3I1/MXDw8N7N161/J+/1ifNATdzwMPDw3sbXnVLyCOGvHkrKrbh4eHhHeMlYURv4DyquF7o5oh4eHh4B3i95qdeiDBvUFir6eHh4eF1xvoEiz7QdYDlw6gAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
