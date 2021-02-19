@@ -24,7 +24,7 @@
     <meta name="description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：  dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件 onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件 onTouchEvent(MotionEvent">
 <meta property="og:type" content="article">
 <meta property="og:title" content="详解Android触摸事件处理程序">
-<meta property="og:url" content="https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/index.html">
+<meta property="og:url" content="https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/index.html">
 <meta property="og:site_name" content="Dylan Tseng 的博客">
 <meta property="og:description" content="详解Android触摸事件处理程序在了解触摸时间处理程序之前，我们来了解这几个主角：  dispatchTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 在分派之前截获所有触摸事件 onInterceptTouchEvent(MotionEvent ev)：此方法允许 ViewGroup 监视分派给子视图的事件 onTouchEvent(MotionEvent">
 <meta property="og:image" content="https://dylantseng1915.github.io/images/touch_progress/TouchProgram00.png">
@@ -125,7 +125,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -280,7 +280,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2021-02-14T14:01:43.639Z" itemprop="dateUpdated">2021-02-14 22:01:43</time>
+    Last updated: <time datetime="2021-02-14T14:01:43.639Z" itemprop="dateUpdated">2021-02-14 22:01:43</time>
 </span><br>
 
 
@@ -310,7 +310,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -320,22 +320,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&via=https://dylantseng1915.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -358,7 +358,7 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2021/02/15/cklcibgg1000bt9z14jc31v9f/" id="post-prev" class="post-nav-link">
+      <a href="/2021/02/15/cklcih3jf0013kyz16bea2w9k/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">Admob 并行请求广告引发的 ANR 的解决思路</h4>
       </a>
@@ -367,7 +367,7 @@
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/01/12/cklcibgfc0000t9z196u2hj1r/" id="post-next" class="post-nav-link">
+      <a href="/2017/01/12/cklcih3i70000kyz1c693gru7/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
         <h4 class="title">Android Looper、Message、Handler、MessageQueue源码解析</h4>
       </a>
@@ -441,7 +441,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&pic=https://dylantseng1915.github.io/img/avatar.png" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -451,22 +451,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&title=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/&via=https://dylantseng1915.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《详解Android触摸事件处理程序》 — Dylan Tseng 的博客&url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/&via=https://dylantseng1915.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/cklcibgfr0006t9z1f04ngsid/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://dylantseng1915.github.io/2017/01/12/cklcih3in0008kyz1fwz53v04/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -477,7 +477,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3awW7kIBAE0Pn/n85e9hbZroLGOys9n6LROPCIBJ2iP5/4+Vl68nd/f/Pq3c+JBw8PD2906vcD30/i94SuPrlntEuGh4eH9w7vakdtMe0n9+Mm83l4Fw8PD+8LeEmxu7ZkSVWMh4eH9z/yksI3L8HvR2yXAw8PD+9NXj65fIr59/NI4mDWgoeHhxfz8luk7/n5yP0eHh4e3oGGgHyD3m9Q2GlZ+Psb8PDw8A7w8g03AeTRw+zF2EPhjoeHhzfKa8PWtq1q7fv7wS4eHh7eOd7+pNc29DwUzhsL6jodDw8Pb7cWLQB56NDidy7hHsbCw8PDG+Xlk2ibqHaOonyf/0ytMR4eHt5GG8Fauby2xbdLNtB6hYeHhzfEm2pObYPanbfqxAUPDw9vmzd74bRWcN9v9PkSX97v4eHh4Y3y8sI0Hziv36cuvR4OJzw8PLxRXrvpt1Fvi2/bvB6WBg8PD+8Abz8gyJ825shbBIqUBQ8PD2+Id38AJMX07GVYHg3XPWV4eHh4B3j7TVRtbLF2X1cHHHh4eHhDvPwf+zbkzYvp2UYuPDw8vNO8to1p/0Jrf+ptiIyHh4d3gpdv320pnC/QflRxeTDg4eHhjfLyrbnd3PffamPih6YBPDw8vCFeezC0CXEbSbShRlR84+Hh4b3CO5Ft7BTui0cCHh4e3iu89pI+Pxjyxdopyh8OBjw8PLwDvP3tOzkq1orvxQcPDw9vlPdTPu0xsNZqkLd/PfyR8PDw8A7w1vbYqU/yy7OBSAIPDw/vwN16e+2UBxlrjVZttPEQ4+Lh4eEd4E2FFGuXZDthRNF0hYeHh/dPeUk8kR8DbYNCMToeHh7eF/Dy4aeCiTZixsPDw3uHl4QReayQN0WtBR9FaxceHh7eAV77D387rbYPKm/w+kw9eHh4eCnvDyi3St/h351bAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3a0WobQQwF0Pz/T6fQp0Jr+15pxk7h7JNxNrtzxjASkr6+4uv79/Xn57+vR/c//+b5E57fc+zCw8PDGy39+eMe8ZLtyN/46J58i//xXjw8PLxrvCQYJId+shGnnhxtKx4eHt5HeY8O6+TO5P48KcfDw8P7X3jPF7opJexDCB4eHt77eUkxIiHNChzJf12vteDh4eHFvFkD7LOfr/f38PDw8EZd9fbK0/S8zbZZJx4eHt4NXj4KsB+o2qfsyUhBUefAw8PDG/Fmo06nhgk2gSHabjw8PLwLvNmDZsn0vuTR/hh4eHh493h5+WCTZM8wm1Xh4eHhvZPX1jPyA7097vMg9AKMh4eHd4h3o9HVlh6KX6DcFDw8PLz38GZtrbzflDe0IkA7dIWHh4d3mXeq/z4DJBv04ns8PDy8a7x2sClJmvMibDtuVWwHHh4e3ht5bRrdFhryIa12a/Dw8PBu89qWfN6qb4/4U9WDFyvEw8PDO8TLG/yzY70dEZhR8fDw8D7Laxe9af/n6fiw24WHh4d3gdeWSttEPCkE58XZPIzh4eHh3eDNDvdTo1qb5Dsq/uLh4eFd47WH+KxMMEum2/ZYMXSFh4eHt+DVw0zxK08VKYYNMzw8PLwLvDaBPhU8ilmGcpuKKjUeHh7egjcrtraFiU0avdkaPDw8vBu82dBAW2DNB6o2fbyHcQ8PDw/vAi8vy+bfnC1VtIENDw8P7wbvu7ySR8+WmKTyB4au8PDw8M7kt9N4cujOdrDgSlDBw8PDK3lJMJgd3PmT28CDh4eH9xN4bZqbt8qSv266dtFkGR4eHt5HeW1jLNmUfFghL0zg4eHh/QTeLPHdp9ebsISHh4d3j9e+eFbCSJ6/GVNY1Vrw8PDwtvNLdfBoiwvP/3c2cDBk4+Hh4aW8X8kcAyf8f8j3AAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
